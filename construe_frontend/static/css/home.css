@@ -1,6 +1,7 @@
 
 
 .quote {
+    color: #131e55;
     max-width: 70%;
 }
 
@@ -23,7 +24,7 @@
 
 .newbook:hover {
     transform: translate(-5px, -10px);
-    box-shadow: 5px 5px 3px greenyellow;
+    box-shadow: 5px 5px 3px #131e55;
 }
 
 .newbook h4, .newbook p {
@@ -33,24 +34,30 @@
 
 .image-small {
     width: 100px;
-    background: #222;
+    background: #ffffff;
     object-fit: contain;
     height: 130px;
   }
 
 
 
-.bg-logo h1{
-    font-size: 50vh;
+  .bg-logo h1 {
+    font-family: 'Playfair Display', serif; /* Apply the new font */
+    font-size: 25vh; /* Adjust to 25% of the viewport height */
     position: fixed;
-    left: calc(50% + 120px);
-    top: 50%;
+    left: 50%; /* Center horizontally */
+    top: 50%; /* Center vertically */
     transform: translate(-50%, -50%);
     margin: 0;
     z-index: -100;
     opacity: 0.5;
-    color: #222;
+    color: #9a9a9a;
+    white-space: nowrap; /* Prevent text from wrapping */
+    width: 100%; /* Ensure enough space for the word */
+    text-align: center; /* Center the text if necessary */
 }
+
+
 
 @media(max-width: 800px) {
     main {

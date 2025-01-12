@@ -1,17 +1,22 @@
 .auth-page {
     max-width: 300px;
+    background-color: #f1f1f1; /* Grey background */
+    padding: 20px; /* Add padding around the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 0 auto; /* Center the box horizontally */
 }
 
 .auth-page * {
     width: 100%;
 }
 
-.auth-page form{
+.auth-page form {
     display: flex;
     flex-direction: column;
     place-items: center;
     gap: 20px;
-} 
+}
 
 .auth-page button[type=submit] {
     width: 30%;
@@ -19,4 +24,7 @@
 
 .alert {
     border: 0.8px solid red !important;
+}
+h3 {
+    color: #003366; /* Dark blue color */
 }
