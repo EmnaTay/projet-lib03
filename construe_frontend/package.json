@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "start": "webpack serve --mode development",
     "watch": "webpack --mode development --watch",
     "build": "webpack --mode production"
   },
@@ -15,7 +16,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
-    "webpack": "^5.33.2",
-    "webpack-cli": "^4.6.0"
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
   }
 }

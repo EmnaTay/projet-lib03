@@ -1,9 +1,9 @@
 body {
-    color: aliceblue;
+    color: #131e55;
     margin: 0;
     top: 0;
     height: 100vh;
-    background: #111;
+    background: #ffffff;
     font-family: 'Roboto';
     word-break: break-all;
 }
@@ -28,7 +28,7 @@ main, .contactus {
 
 .header {
     grid-column: 1/-1;
-    background: #333;
+    background: #131e55;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -36,7 +36,7 @@ main, .contactus {
 }
 
 h1 {
-    font-family: 'Train One', 'cursive';
+    font-family: 'Playfair Display', serif;
 }
 
 .header-auth {
@@ -58,7 +58,7 @@ h1 {
 }
 
 hr {
-    color: aliceblue;
+    color: #131e55;
     width: 90%;
 }
 
@@ -74,7 +74,7 @@ hr {
 
 .image {
     width: 250px;
-    background: #222;
+    background: #131e55;
     object-fit: contain;
     height: 360px;
   }
@@ -94,8 +94,8 @@ a, button {
 }
 
 a:hover, button:hover {
-    background: #555;
-    color: greenyellow;
+    background: #ffffff;
+    color: #131e55;
     transform: translate(2px, 2px);
     cursor: pointer;
 }
@@ -105,7 +105,7 @@ small {
 }
 
 input[type=text], input[type=password], input[type=email], textarea {
-    background: #333;
+    background: #ffffff;
     border-radius: 5px;
     transition: 0.3s;
     caret-color: aliceblue;
@@ -118,12 +118,12 @@ input[type=text], input[type=password], input[type=email], textarea {
 
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, textarea:focus {
     outline: none;
-    border: 0.4px solid greenyellow;
+    border: 0.4px solid #131e55;
     color: aliceblue;
 }
 
 ::placeholder{
-    color: rgba(173, 255, 51, 0.5);
+    color:#707698;
     text-align: center;
     vertical-align: middle;
 }
