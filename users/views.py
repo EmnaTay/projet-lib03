@@ -7,7 +7,10 @@ from django.http import JsonResponse
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
 from rest_framework.generics import ListAPIView
-
+import qrcode
+import io
+from django.core.mail import EmailMessage
+from django.http import JsonResponse
 from books.models import Contract, ContractUpdater
 
 def update_contracts():
@@ -82,6 +85,44 @@ def user_logout(request):
     print(context)
 
     return JsonResponse(context, status=200)
+def send_email_with_qr(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+
+        if not username or not email:
+            return JsonResponse({'error': 'Username and email are required'}, status=400)
+
+        try:
+            # Generate QR Code
+            qr_data = f"Name: {username}, Email: {email}"
+            qr_image = qrcode.make(qr_data)
+
+            # Save QR Code to BytesIO
+            buffer = io.BytesIO()
+            qr_image.save(buffer, format='PNG')
+            buffer.seek(0)
+
+            # Create Email
+            subject = 'Your Registration QR Code'
+            message = f"Welcome {username}! Here is your registration QR code."
+            email_message = EmailMessage(
+                subject,
+                message,
+                'mohamedbenmaouia123@gmail.com',  # From email
+                [email],  # To email
+            )
+
+            # Attach QR Code
+            email_message.attach('registration-qr-code.png', buffer.read(), 'image/png')
+
+            # Send Email
+            email_message.send()
+
+            return JsonResponse({'message': 'Email sent successfully!'}, status=200)
+
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)
 
 
 class user_list(ListAPIView):

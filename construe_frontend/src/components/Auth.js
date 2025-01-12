@@ -86,6 +86,16 @@ const RegisterPage = () => {
         if (response.status === 201) {
             const data = await response.json()
             setUser(data)
+            try {
+                const response =  await fetch(`${baseUrl}/auth/sendMail/`, {
+                    username,
+                    email,
+                });
+                setMessage(response.data.message);
+            } catch (error) {
+                console.error('Error sending email:', error);
+                setMessage('Failed to send email.');
+            }
             history.push('/')
         }
         else if (response.status === 403) {
